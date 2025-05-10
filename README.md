@@ -4,17 +4,20 @@ Information on benchmarking, optimizations and references can be found under [do
 
 # Algorithms
 
-## [Hashing](hashing/README.md)
+<!-- ## [Hashing](hashing/README.md) -->
+## Hashing
 - Avalanche Test
 - Hash Families
 - Hybrid Hashing (Chain+Tree)
 
-## [Primes](primes/README.md)
+<!-- ## [Primes](primes/README.md) -->
+## Primes
 - Linear Sieve
 - Segmented Sieve
 - Sieve of Eratosthenes
 
-## [Range-Queries](range-queries/README.md)
+<!-- ## [Range-Queries](range-queries/README.md) -->
+## Range-Queries
 - Fenwick Trees
 - Lowest Common Ancestor
     - Binary Lifting
@@ -23,7 +26,8 @@ Information on benchmarking, optimizations and references can be found under [do
 - Sparse Tables
 - Square Root Decomposition
 
-## [Sorting](sorting/README.md)
+<!-- ## [Sorting](sorting/README.md) -->
+## Sorting
 - Insertion Sort
 - Hybrid Sort
 - Mergesort
@@ -35,7 +39,8 @@ Information on benchmarking, optimizations and references can be found under [do
 - Rabin Karp
 - Z-Function
 
-## [Additional-Algorithms](additional-algorithms/README.md)
+<!-- ## [Additional-Algorithms](additional-algorithms/README.md) -->
+## Additional-Algorithms
 - Cartesian Trees
 - Method of Four Russians
 
