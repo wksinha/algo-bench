@@ -16,7 +16,8 @@ Theoretically optimal algorithms aren't necessarily the best solutions in practi
         - Find the least and highest running times.  
         $lrt = \min_{1 \leq i \leq n} (t_i)$  
         $hrt = \max_{1 \leq i \leq n} (t_i)$  
-        - *Claim:* the median running time lies in the range [$lrt$, $hrt$] with probability $1$ - $2^{-(T - 1)}$.  
+        - *Claim:*  
+            The median running time lies in the range [$lrt$, $hrt$] with probability $1$ - $2^{-(T - 1)}$.  
         - *Proof:*  
             Pr[$median \in [lrt, hrt]$] = $1$ - Pr[ $median < lrt$ | $hrt < median$]  
                                                         = $1$ - Pr[$median < lrt$] - Pr[$hrt < median$] (since the events are disjoint)  
