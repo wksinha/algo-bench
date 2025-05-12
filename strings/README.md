@@ -23,7 +23,8 @@ Formally, given a string *s* with length *n*, it finds all the pairs *(i, j)
 ## Rabin-Karp
 Based on the idea of hashing, the Rabin-Karp algorithm compares the hash of substrings of a text *t* to that of a pattern *p*.  
 The efficient implementation assumes that a matching hash implies (with high confidence) that the substring matches the pattern.  
-In practice, results from [tests](tests) agree that the algorithm rarely fails (with good hash functions).
+In practice, results from [tests](tests) agree that the algorithm rarely fails (with good hash functions).  
+It did not fail over a single instance among multiple test runs.
 
 ### Applications
 - Search for a substring in a string
