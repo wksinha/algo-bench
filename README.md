@@ -45,7 +45,6 @@ Information on benchmarking, optimizations and references can be found under [do
 - Method of Four Russians
 
 # System Information
-- Linux 6.14.5
-- C++ 23 (gcc 15.1.1)
-- Python 3.13.3
-- Bash (5.2.37)
+Processor: [Intel(R) Core(TM) Ultra 9 185H](lscpu-info.txt)  
+Operating System: Linux 6.14.5  
+Language Versions: C++ 23 (gcc 15.1.1), Python 3.13.3, Bash (5.2.37)  
