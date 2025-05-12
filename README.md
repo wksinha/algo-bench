@@ -4,8 +4,7 @@ Information on benchmarking, optimizations and references can be found under [do
 
 # Algorithms
 
-<!-- ## [Hashing](hashing/README.md) -->
-## Hashing
+## [Hashing](hashing/README.md)
 - Avalanche Test
 - Hash Families
 
