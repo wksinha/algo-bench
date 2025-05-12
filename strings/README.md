@@ -37,6 +37,9 @@ In other words, *z[i]* is the length of the longest string that is, at the sam
 - Counting the number of occurrences of each prefix
 - Compressing a string - representing a string *s* as *t+..+t* for some prefix *t* with the shortest length.
 
+## Results
+Refer [benchmarks](bench/README.md)
+
 ## References
 1. [KMP, CP-Algorithms](https://cp-algorithms.com/string/prefix-function.html)
 2. [Manacher, CP-Algorithms](https://cp-algorithms.com/string/manacher.html)
