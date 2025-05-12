@@ -98,17 +98,10 @@ std::vector<int> Strings::searchPatternZ(std::string &text, std::string &pattern
 std::vector<int> manacher_odd(std::string s) {
     int n = s.size();
     s = "$" + s + "^";
-    // std::cerr << s << " " << n << " 1" << std::endl;
     std::vector<int> p(n + 2, 0);
-    // std::cerr << s << " 1a" << std::endl;
-    // if (true) {
-        // return std::vector<int>();
-    // }
     int l = 0, r = 1;
-    // std::cerr << s << " 2" << std::endl;
     for(int i = 1; i <= n; i++) {
         p[i] = std::max(0, std::min(r - i, p[l + (r - i)]));
-        std::cerr << i << " - " << p[i] << std::endl;
         
         while(s[i - p[i]] == s[i + p[i]]) {
             p[i]++;
@@ -117,7 +110,6 @@ std::vector<int> manacher_odd(std::string s) {
             l = i - p[i], r = i + p[i];
         }
     }
-    std::cerr << s << " 3" << std::endl;
     return std::vector<int>(begin(p) + 1, end(p) - 1);
 }
 
@@ -128,7 +120,6 @@ std::vector<int> Strings::subpalindromesManacher(std::string& s) {
         std::string cs{c};
         t += "#" + cs;
     }
-    // std::cout << "M t" << t << std::endl;
     auto res = manacher_odd(t + "#");
     return std::vector<int>(begin(res) + 1, end(res) - 1);
 }
@@ -140,7 +131,7 @@ std::vector<int> Strings::subpalindromesRK(std::string &s) {
         std::string cs{c};
         t += "#" + cs;
     }
-    // std::cout << "RK t 1" << t << std::endl;
+    t += "#";
 
     int n = t.size();
     const long long m = 1e9 + 9;
@@ -151,36 +142,32 @@ std::vector<int> Strings::subpalindromesRK(std::string &s) {
         p_pow[i] = (p_pow[i-1] * p) % m;
     }
 
-    std::vector<long long> h(t.size() + 1, 0);
-    for (int i = 0; i < t.size(); i++) {
+    std::vector<long long> h(n + 1, 0);
+    for (int i = 0; i < n; i++) {
         h[i+1] = (h[i] + (t[i] + 1) * p_pow[i]) % m;
-        // std::cout << "h[" << i + 1 << "] = " << h[i + 1] << std::endl;
-        // std::cout << t[i] << " " << (t[i] + 1) << std::endl;
     }
-    // std::cout << "RK t 2" << t << std::endl;
-    #warning add reverse-hash for correction
-    // add h_r reverse-hash
+    std::vector<long long> hr(n + 1, 0);
+    for (int i = n - 1; i >= 0; i--) {
+        hr[i] = (hr[i + 1] + (t[i] + 1) * p_pow[n - i - 1]) % m;
+    }
 
-    std::vector<int> res(n - 1, 0);
-    for (int i = 1; i < n; ++i) {
-        int lo = 0, hi = std::min(i - 1, n - i - 1), best = 0;
-        if (hi == 0) {
-            continue;
-        }
+    std::vector<int> res(n - 2, 0);
+    for (int i = 1; i < n - 1; ++i) {
+        int lo = 1, hi = std::min(i, n - i - 1), best = 0;
         while (lo <= hi) {
             int mid = (lo + hi) / 2;
-            int leftHash = (h[i - 1] + m - h[i - mid - 1]) % m;
-            int rightHash = (h[i + mid] + m - h[i]) % m;
-            if (leftHash * p_pow[mid + 1] % m == rightHash) {
+            long long leftHash = ((h[i] + m - h[i - mid]) % m) * p_pow[n - i] % m;
+            long long rightHash = ((hr[i + 1] + m - hr[i + mid + 1]) % m) * p_pow[i + 1] % m;
+
+            if (leftHash == rightHash) {
                 best = mid;
                 lo = mid + 1;
             } else {
                 hi = mid - 1;
             }
         }
-        res[i - 1] = best;
+        res[i - 1] = best + 1;
     }
-    // std::cout << "RK t 3" << t << std::endl;
     
     return res;
 }

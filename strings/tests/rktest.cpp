@@ -2,6 +2,8 @@
 #include <iostream>
 #include <unordered_set>
 
+#define dbg false
+
 int main() {
     int tests;
     std::cin >> tests;
@@ -48,11 +50,13 @@ int main() {
             if (palindromesRK[i] > palindromesManacher[i]) {
                 differences++;
             } else if (palindromesRK[i] < palindromesManacher[i]) {
-                for (size_t i = 0; i < palindromesRK.size(); ++i) {
-                    std::cout << "rk[" << i << "] = " << palindromesRK[i] << std::endl;
-                }
-                for (size_t i = 0; i < palindromesManacher.size(); ++i) {
-                    std::cout << "m[" << i << "] = " << palindromesManacher[i] << std::endl;
+                if (dbg) {
+                    for (size_t i = 0; i < palindromesRK.size(); ++i) {
+                        std::cout << "rk[" << i << "] = " << palindromesRK[i] << std::endl;
+                    }
+                    for (size_t i = 0; i < palindromesManacher.size(); ++i) {
+                        std::cout << "m[" << i << "] = " << palindromesManacher[i] << std::endl;
+                    }
                 }
                 
                 std::cerr << "Invalid result. Rabin-Karp under-counting against Manacher on test" << t << std::endl;
