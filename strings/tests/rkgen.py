@@ -10,8 +10,10 @@ def print_random_string(length, alphabet_size):
     alphabet = ALPHABET[:alphabet_size]
     print(''.join(random.choice(alphabet) for _ in range(length)))
 
-TEST_CASES = len(TEXT_LENGTHS)
+REPETITION = 4
+TEST_CASES = REPETITION * len(TEXT_LENGTHS)
 print(TEST_CASES)
-for t in range(TEST_CASES):
-    print_random_string(TEXT_LENGTHS[t], ALPHABET_SIZES[t]) # text
-    print_random_string(PATTERN_LENGTHS[t], ALPHABET_SIZES[t]) # pattern
+for _ in range(REPETITION):
+    for t in range(len(TEXT_LENGTHS)):
+        print_random_string(TEXT_LENGTHS[t], ALPHABET_SIZES[t]) # text
+        print_random_string(PATTERN_LENGTHS[t], ALPHABET_SIZES[t]) # pattern
