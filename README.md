@@ -8,7 +8,6 @@ Information on benchmarking, optimizations and references can be found under [do
 ## Hashing
 - Avalanche Test
 - Hash Families
-- Hybrid Hashing (Chain+Tree)
 
 <!-- ## [Range-Queries](range-queries/README.md) -->
 ## Range-Queries
