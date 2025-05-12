@@ -10,12 +10,6 @@ Information on benchmarking, optimizations and references can be found under [do
 - Hash Families
 - Hybrid Hashing (Chain+Tree)
 
-<!-- ## [Primes](primes/README.md) -->
-## Primes
-- Linear Sieve
-- Segmented Sieve
-- Sieve of Eratosthenes
-
 <!-- ## [Range-Queries](range-queries/README.md) -->
 ## Range-Queries
 - Fenwick Trees
