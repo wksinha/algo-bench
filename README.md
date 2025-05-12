@@ -6,7 +6,6 @@ Information on benchmarking, optimizations and references can be found under [do
 
 ## [Hashing](hashing/README.md)
 - Avalanche Test
-- Hash Families
 
 <!-- ## [Range-Queries](range-queries/README.md) -->
 ## Range-Queries
