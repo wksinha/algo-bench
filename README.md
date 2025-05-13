@@ -6,9 +6,10 @@ Information on benchmarking, optimizations and references can be found under [do
 
 ## [Hashing](hashing/README.md)
 - Avalanche Test
+    - Polynomial Hash
+    - std::hash (FNV-1a)
 
-<!-- ## [Range-Queries](range-queries/README.md) -->
-## Range-Queries
+## [Range-Queries](range-queries/README.md)
 - Fenwick Trees
 - Lowest Common Ancestor
     - Binary Lifting
@@ -17,8 +18,7 @@ Information on benchmarking, optimizations and references can be found under [do
 - Sparse Tables
 - Square Root Decomposition
 
-<!-- ## [Sorting](sorting/README.md) -->
-## Sorting
+## [Sorting](sorting/README.md)
 - Insertion Sort
 - Hybrid Sort
 - Mergesort

@@ -1,7 +1,6 @@
 import random
 import sys
 
-n = len(sys.argv)
 TEST_CASES = int(sys.argv[1])
 assert TEST_CASES > 0
 
