@@ -29,7 +29,7 @@ algorithm fnv-1a is
     - The mask is applied to the input and the bin is chosen mod $m$.
 
 ## Results
-For results, refer the benchmark [docs](bench/README.md)
+Refer [benchmarks](bench/README.md)
 
 ## References
 - [Avalanche Effect](https://en.wikipedia.org/wiki/Avalanche_effect)
