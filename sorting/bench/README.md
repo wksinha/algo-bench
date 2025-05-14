@@ -8,12 +8,12 @@ Each size below is tested with 10 test instances per algorithm.
 - **Large:** 100,000–2,000,000
 
 ## Sorting Results
-
+Least and highest running times across all tests.  
 |           | **insertionSort**       | **quickSort**           | **mergeSort**           | **hybridSort**          |
 |-----------|-------------------------|-------------------------|-------------------------|-------------------------|
-| small     | (709, 7473)             | (768, 6078)             | (933, 7776)             | (763, 6022)             |
-| medium    | (141312, 10548489)      | (81225, 880327)         | (94431, 1043705)        | (72792, 769667)         |
-| large     | (NA, NA)                | (9733001, 98435984)     | (11691272, 120194603)   | (8779871, 90966402)     |
+| small     | (709, 7,473)            | (768, 6,078)            |(933, 7,776)             | (763, 6,022)            |
+| medium    | (141,312, 10,548,489)   | (81,225, 880,327)       |(94,431, 1,043,705)      | (72,792, 769,667)       |
+| large     | (NA, NA)                | (9,733,001, 98,435,984) |(11,691,272, 120,194,603)| (8,779,871, 90,966,402) |
 
 <p>
   <img src="sorting-stats-small.png" alt="Running Times on Small Inputs" width="500" height="300" />

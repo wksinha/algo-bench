@@ -24,6 +24,13 @@ Theoretically optimal algorithms aren't necessarily the best solutions in practi
                                                         = $1$ - $2^{-T}$ - $2^{-T}$  (since probability that a single execution is on either side = $2^{-1}$)  
                                                         = $1$ - $2^{-(T - 1)}$  
         - Similar arguments can be used to find $n^{th}$ percentile statistics.
+- Comparing Algorithms  
+    While exact comparisons between algorithms on the basis of the overlapping bounds are not feasible, a direct comparison can instead be made as follows:  
+    - For each pair of algorithms, run both on the same set of inputs and compare running times.  
+    - If either comes ahead by at least a margin (say, $5\%$), we can attribute that to the algorithm's efficiency.  
+    - If not, the result for the same can be marked inconclusive.  
+
+    While the above is more direct, we have used the bounds as indicative of performance and instead performed comparison across all algorithms rather than pairwise analysis.
 
 
 ## Optimizations

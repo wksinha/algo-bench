@@ -11,7 +11,7 @@ Each size below is tested with 100 test instances per algorithm.
 ---
 
 ## Pattern Matching Results
-
+Least and highest running times across all tests.  
 | **Size**  | **Rabin Karp**           | **KMP**                   | **Z-Function**            |
 |-----------|--------------------------|---------------------------|---------------------------|
 | Small     | (1,636, 45,676)          | (601, 4,348)              | (657, 5,191)              |
@@ -30,7 +30,7 @@ It is observed that among the given implementations, KMP is the fastest with Z-F
 ---
 
 ## Subpalindrome Detection Results
-
+Least and highest running times across all tests.  
 | **Size**  | **Hashing+Binary Search** | **Manacher**                 |
 |-----------|---------------------------|------------------------------|
 | Small     | (13,785, 84,621)          | (3,518, 20,550)              |

@@ -12,11 +12,16 @@ Here, we focus instead on the avalanche test, a property that postulates that a 
         - $h_s$ = $(h_s$ + $ascii(s[i])$ * $p^{i})$ % $m$
 
 - std::hash (FNV-1a)
-    <p style="text-align: center; margin-left: -940px;">
-        <img src="fnv-1a.png" alt="FNV-1a Algorithm" width="250" height="150" />
-        <br />
-        <em>Figure 1: FNV-1a Algorithm (Wikipedia)</em>
-    </p>
+```pseudocode
+algorithm fnv-1a is
+    hash := FNV_offset_basis
+
+    for each byte_of_data to be hashed do
+        hash := hash XOR byte_of_data
+        hash := hash × FNV_prime
+
+    return hash
+```
 - XOR Hash
     - A simple hash function where the hash is the bitwise xor of all 32 bit disjoint components. (A string is broken into 4 character sets).
 - Random-Hash

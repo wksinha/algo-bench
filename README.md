@@ -11,9 +11,6 @@ Information on benchmarking, optimizations and references can be found under [do
 
 ## [Range-Queries](range-queries/README.md)
 - Fenwick Trees
-- Lowest Common Ancestor
-    - Binary Lifting
-    - Farach-Colton and Bender
 - Segment Trees
 - Sparse Tables
 - Square Root Decomposition
@@ -34,6 +31,9 @@ Information on benchmarking, optimizations and references can be found under [do
 ## Additional-Algorithms
 - Cartesian Trees
 - Method of Four Russians
+- Lowest Common Ancestor
+    - Binary Lifting
+    - Farach-Colton and Bender
 
 # System Information
 Processor: [Intel(R) Core(TM) Ultra 9 185H](lscpu-info.txt)  
