@@ -1,4 +1,7 @@
 # Project Report
+**Prepared by: Warul Kumar Sinha (2023201045)**  
+**Under the advisory of: Dr. Kshitij Gajjar**
+
 A variety of algorithms exist to solve the same problem, but nuances often affect practical applicability. This project aims to analyse, benchmark, compare, and document algorithms alongside such nuances.  
 Information on benchmarking, optimizations and references can be found under [docs](#docs).  
 
