@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from copy import deepcopy
 
-methods = ["insertionSort", "quickSort", "mergeSort", "hybridSort"]
-testTypes = ["small", "medium", "large"]
+methods = ["fenwickTree", "segmentTree", "iterativeSegmentTree"]
+testTypes = ["small-1", "small-2", "medium-1", "medium-2", "large"]
 
 def read_integers_from_file(filename):
     integers = []
@@ -43,15 +43,14 @@ def get_stats():
     for testType in testTypes:
         statistics[testType] = {}
         for method in methods:
-            if method != "insertionSort" or (testType in ["small", "medium"]):
-                filename = f"{method}.{testType}.times.txt"
-                running_times = read_integers_from_file(filename)
-                least = min(running_times)
-                highest = max(running_times)
-                statistics[testType][method] = (least, highest)
+            filename = f"{method}.{testType}.times.txt"
+            running_times = read_integers_from_file(filename)
+            least = min(running_times)
+            highest = max(running_times)
+            statistics[testType][method] = (least, highest)
     return statistics
 
-def plot(statistics, filename_prefix="sorting-stats"):
+def plot(statistics, filename_prefix="range-queries-stats"):
     for testType in testTypes:
         current_data = statistics.get(testType, {})
         valid_algorithms = [algo for algo in methods if algo in current_data]
@@ -70,7 +69,7 @@ def plot(statistics, filename_prefix="sorting-stats"):
         plt.bar(x + width/2, max_times, width=width, label='Max Time', alpha=0.5)
 
         plt.title(f'Running Time Ranges for {testType.capitalize()} Inputs')
-        plt.xlabel('Sorting Algorithm')
+        plt.xlabel('Range Query Algorithm')
         plt.ylabel('Running Time (ns)')
         plt.xticks(x, valid_algorithms)
         plt.legend()

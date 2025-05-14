@@ -13,7 +13,6 @@ Information on benchmarking, optimizations and references can be found under [do
 - Fenwick Trees
 - Segment Trees
 - Sparse Tables
-- Square Root Decomposition
 
 ## [Sorting](sorting/README.md)
 - Insertion Sort
@@ -27,9 +26,9 @@ Information on benchmarking, optimizations and references can be found under [do
 - Rabin Karp
 - Z-Function
 
-<!-- ## [Additional-Algorithms](additional-algorithms/README.md) -->
-## Additional-Algorithms
+## [Additional-Algorithms](additional-algorithms/README.md)
 - Cartesian Trees
+- Square Root Decomposition
 - Method of Four Russians
 - Lowest Common Ancestor
     - Binary Lifting

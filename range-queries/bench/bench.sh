@@ -1,17 +1,25 @@
 #!/bin/bash
 
-g++ bench.cpp ../sorting.cpp -o bench -O3 -march=native
+g++ bench.cpp ../fenwick.cpp ../iterative_segment_tree.cpp ../segment_tree.cpp -o bench -O3 -march=native
 
-# Small tests
-python gen.py 10 10 200 1 32000 > test.in
-./bench small < test.in 2> /dev/null
+# Small-1
+python gen.py 10 10 100 10 100 > test.in
+./bench small-1 < test.in 2> /dev/null
 
-# Medium tests
-python gen.py 10 1000 20000 1 1000000 > test.in
-./bench medium < test.in 2> /dev/null
+# Small-2
+python gen.py 10 10 100 100 1000 > test.in
+./bench small-2 < test.in 2> /dev/null
 
-# Large tests
-python gen.py 10 100000 2000000 1 1000000000 > test.in
+# Medium-1
+python gen.py 10 1000 10000 1000 10000 > test.in
+./bench medium-1 < test.in 2> /dev/null
+
+# Medium-2
+python gen.py 10 1000 10000 10000 100000 > test.in
+./bench medium-2 < test.in 2> /dev/null
+
+# Large
+python gen.py 10 100000 1000000 100000 1000000 > test.in
 ./bench large < test.in 2> /dev/null
 
 python statistics.py

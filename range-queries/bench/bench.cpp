@@ -1,5 +1,8 @@
-#include "../sorting.h"
+#include "../fenwick.h"
+#include "../segment_tree.h"
+#include "../iterative_segment_tree.h"
 #include <string>
+#include <vector>
 #include <functional>
 #include <iostream>
 #include <chrono>
@@ -31,7 +34,7 @@ int main(int argc, char* argv[]) {
     int tests;
     cin >> tests;
     for (int t = 0; t < tests; t++) {
-        std::vector<int> vec;
+        vector<int> vec;
         int n;
         cin >> n;
         for (int i = 0; i < n; i++) {
@@ -39,28 +42,56 @@ int main(int argc, char* argv[]) {
             cin >> vi;
             vec.push_back(vi);
         }
-
-        std::vector<int> v1(vec.begin(), vec.end());
-        std::vector<int> v2(vec.begin(), vec.end());
-        std::vector<int> v3(vec.begin(), vec.end());
-        std::vector<int> v4(vec.begin(), vec.end());
-
-        if (n <= 20'000) {
-            benchmarkAndLog("insertionSort", testType, [&]() {
-                Sorting::insertionSort(v1);
-            });
+        int queryCount;
+        cin >> queryCount;
+        vector<tuple<int, int, int>> queries;
+        for (int q = 0; q < queryCount; q++) {
+            tuple<int, int, int> query;
+            int type, v1, v2;
+            cin >> type >> v1 >> v2;
+            queries.push_back(make_tuple(type, v1, v2));
         }
-        
-        benchmarkAndLog("quickSort", testType, [&]() {
-            Sorting::quickSort(v2);
+
+        benchmarkAndLog("fenwickTree", testType, [&]() {
+            FenwickTree bit(vec);
+            for (auto query : queries) {
+                int type = get<0>(query);
+                int v1 = get<1>(query);
+                int v2 = get<2>(query);
+                if (type) {
+                    bit.sum(v1, v2);
+                } else {
+                    bit.add(v1, v2);
+                }
+            }
         });
 
-        benchmarkAndLog("mergeSort", testType, [&]() {
-            Sorting::mergeSort(v3);
+        benchmarkAndLog("segmentTree", testType, [&]() {
+            SegmentTree st(vec);
+            for (auto query : queries) {
+                int type = get<0>(query);
+                int v1 = get<1>(query);
+                int v2 = get<2>(query);
+                if (type) {
+                    st.sum(v1, v2);
+                } else {
+                    st.add(v1, v2);
+                }
+            }
         });
 
-        benchmarkAndLog("hybridSort", testType, [&]() {
-            Sorting::hybridSort(v4);
+        benchmarkAndLog("iterativeSegmentTree", testType, [&]() {
+            IterativeSegmentTree st(vec);
+            for (auto query : queries) {
+                int type = get<0>(query);
+                int v1 = get<1>(query);
+                int v2 = get<2>(query);
+                if (type) {
+                    st.sum(v1, v2);
+                } else {
+                    st.add(v1, v2);
+                }
+            }
         });
     }
 
