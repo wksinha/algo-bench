@@ -567,7 +567,7 @@ It is observed that Manacher's algorithm vastly outperforms the $O(n\log n)$ alt
 Sparse Table is a data structure, that allows answering static range queries.  
 The idea is to store for each range $[i:i + 2^j - 1]$, its result. This can be done efficiently using $O(n\log n)$ memory and time precomputation.  
 \begin{itemize}
-  \item Precompute: $O(n)$ for an $n$ length array.
+  \item Precompute: $O(n \log n)$ for an $n$ length array.
   \item Query: $O(\log n)$ or $O(1)$ for \hyperref[https://en.wikipedia.org/wiki/Idempotence]{idempotent functions}
 \end{itemize}
 
@@ -610,7 +610,7 @@ Given that the $2^0$ ancestor is just the parent and the $2^{j+1}$ distance ance
 This allows for $O(N\log N)$ preprocessing for a tree with $N$ nodes.  
 Further, each query can be answered in $O(log N)$ time, as follows:
 \begin{itemize}
-  \item Without loss of generality, let $height(v_1)$ = $u$ < $height(v_2)$ = $v$.
+  \item Without loss of generality, let $height(v_1)$ = $u$ $<$ $height(v_2)$ = $v$.
   \item Using at most $\log N$ jumps, we can reach ancestor $v_2'$ from $v_2$, such that $height(v_2')$ = $u$.
   \item We then find the LCA of $v_1$ and $v_2'$, by finding the largest $2^j$ ancestor of each such that they differ, and repeat this until finially the parent of the two nodes found is common.  
   \item This node is the LCA.
@@ -714,7 +714,8 @@ The input size and values also contributed in turn to performance. We studied th
 The practical study of algorithms can be further extended to other algorithms, and particularly those with hardware specific optimizations.\\
 Sorting\cite{google_vectorized_quicksort} and Pattern matching\cite{stackoverflow_stringfind_complexity}, problems we have considered are already known to benefit from the same. \\
 In addition, work from \hyperref[http://sereja.me/]{Sergey Slotin} on data structures\cite{sslotin_book} such as segment trees \cite{wide_segment_tree} is another area of study for practical performance. \\
-Deep understanding of systems programming languages, assembly and hardware optimizations are expected to dive into these directions.
+Deep understanding of systems programming languages, assembly and hardware optimizations are expected to dive into these directions.  \\
+Another direction for work is to consider scaling of performance upon parallelization, how well do algorithms perform with horizontal scaling of resources?
 
 \begin{thebibliography}{50}
 
