@@ -12,7 +12,6 @@ Information on benchmarking, optimizations and references can be found under [do
 ### [Range-Queries](range-queries/README.md)
 - Fenwick Trees
 - Segment Trees
-- Sparse Tables
 
 ### [Sorting](sorting/README.md)
 - Insertion Sort

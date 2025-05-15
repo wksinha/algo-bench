@@ -15,7 +15,6 @@ Information on benchmarking, optimizations and references can be found under [do
 ### [Range-Queries](#range-queries-1)
 - Fenwick Trees
 - Segment Trees
-- Sparse Tables
 
 ### [Sorting](#sorting-1)
 - Insertion Sort
@@ -473,7 +472,7 @@ It can be constructed in $O(n)$ time using stacks.
 <p>
   <img src="cartesian_tree.png" alt="A cartesian tree example" width="300" height="300" />
   <br />
-  <em>Figure 1: An array and its Cartesian tree</em>
+  <em>Figure 1: [An array and its Cartesian tree](https://en.wikipedia.org/wiki/Cartesian_tree)</em>
 </p>
 
 ## Method of Four Russians
@@ -505,7 +504,7 @@ We divide the array  $A$  into blocks of size  $K = 0.5log(N)$. There are 
 <p>
 <img src="sparse-calculations.png" alt="Sparse Table Calculations" width="500" height="200" />
 <br />
-<em>Figure 1: Sparse Table Complexity</em>
+<em>Figure 1: <a href="https://cp-algorithms.com/graph/lca_farachcoltonbender.html">Sparse Table Complexity</a></em>
 </p>
 
 Minimum over blocks can be solved using the above sparse table.  
@@ -515,7 +514,7 @@ Because the blocks are so small, there are only a handful of possible sequences,
 <p>
 <img src="block-calculations.png" alt="Block Calculations" width="300" height="75" />
 <br />
-<em>Figure 2: Block Possibilities Count</em>
+<em>Figure 2: <a href="https://cp-algorithms.com/graph/lca_farachcoltonbender.html">Block Possibilities Count</a></em>
 </p>
 
 Thus, the number of different blocks is at most $O(N^{0.5})$, and therefore results of range minimum queries over them can be precomputed in $O(N^{0.5}*K^2)$ = $O(N^{0.5}*log^2(N))$ = $O(N)$ time. Mapping between blocks and results can be stored in an array $block[bitmask][left][right]$, storing the results of the block over its subarray $[left,right]$.
